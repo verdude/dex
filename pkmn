@@ -8,7 +8,7 @@ elif [ -f dex.txt ]; then
   fp=dex.txt
 fi
 
-pkmn=$(cat dex.txt | fzf)
+pkmn=$(cat $fp | fzf)
 
 if [[ -n $pkmn ]]; then
   url="https://pokemondb.net/pokedex/$pkmn"
