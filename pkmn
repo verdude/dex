@@ -2,6 +2,12 @@
 
 set -eEuo pipefail
 
+if [ -f /usr/share/dex/dex.txt ]; then
+  fp=/usr/share/dex/dex.txt
+elif [ -f dex.txt ]; then
+  fp=dex.txt
+fi
+
 pkmn=$(cat dex.txt | fzf)
 
 if [[ -n $pkmn ]]; then
